@@ -13,14 +13,14 @@ namespace Program_20
         {
             Console.Title = "ЗАДАНИЕ 20. ДЕЛЕГАТЫ";
 
-            MyDelegate myDelegate = LCircle;
+            MyDelegate myDelegate = new MyDelegate (LCircle);
             myDelegate += SCircle;
             myDelegate += VCircle;
             Console.Beep();
             Console.Write("Введите радиус окружности: ");
             double r = double.Parse(Console.ReadLine());
 
-            double x = myDelegate(r);
+            myDelegate?.Invoke(r);
             Console.ReadKey();
         }
 
